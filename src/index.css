@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--primary-color: #780000;
+	--secondary-color: #c1121f;
+	--tertiary-color: #003049;
+
+	--text-color-primary: #fdf0d5;
+	--text-color-secondary: #669bbc;
+
+	--font-orbitron: "Orbitron", sans-serif;
+}
+
+body {
+	color: var(--text-color-primary);
+}
+
+nav {
+	font-family: var(--font-orbitron);
+}

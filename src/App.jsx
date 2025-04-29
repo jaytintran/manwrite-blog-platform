@@ -1,7 +1,12 @@
-const App = () => {
-  return (
-    <div className=''>Hello World</div>
-  )
-}
+import Navbar from "./Navbar";
 
-export default App
+const App = () => {
+	return (
+		<div className="">
+			<Navbar />
+			Hello World
+		</div>
+	);
+};
+
+export default App;
