@@ -13,7 +13,7 @@ const App = () => {
 			<FeaturedPosts />
 
 			{/* Call to Action */}
-			<section className="py-20 bg-sand text-dark text-center">
+			<section className="py-20 bg-sand text-primary text-center">
 				<div>
 					<h2 className="text-4xl font-bold uppercase mb-4">
 						Start Writing Now
@@ -23,7 +23,7 @@ const App = () => {
 					</p>
 					<a
 						href="/write"
-						className="inline-block bg-dark text-sand px-6 py-3 text-lg font-semibold rounded hover:bg-primary hover:text-white transition"
+						className="font-orbitron inline-block bg-primary text-dark hover:bg-secondary px-6 py-3 text-lg font-semibold rounded transition"
 					>
 						Begin Your Chronicle
 					</a>

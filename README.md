@@ -40,6 +40,10 @@ Manwrite is a modern, fully functional full-stack blog application built from th
 - **MongoDB** – NoSQL database for scalable data storage.
 - **EJS** – Templating engine for rendering dynamic content.
 
+### **Cloud Services**
+
+- **ImageKit** – Cloud-based image and video management.
+
 ## 📂 Installation & Setup
 
 ### 1️⃣ Clone the repository
