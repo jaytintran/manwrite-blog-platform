@@ -9,10 +9,11 @@ const Hero = () => {
 				</h1>
 				<p className="max-w-2xl mx-auto text-lg text-light/70 mb-6">
 					Forge your thoughts. Chronicle your battles. A platform for men to
-					speak raw, real, and unfiltered.
+					speak raw, real, and unfiltered. And connect with fellow like-minded
+					men.
 				</p>
 				<Link
-					to="/sign-in"
+					to="/posts"
 					className="inline-block bg-primary text-dark px-6 py-3 text-lg font-semibold uppercase tracking-widest rounded hover:bg-secondary transition"
 				>
 					Join the Movement

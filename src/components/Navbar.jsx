@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react"; // install lucide-react for clean icons
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-	{ name: "Top Posts", href: "/blogs" },
-	{ name: "Health", href: "/" },
+	{ name: "Top Posts", href: "/posts" },
+	{ name: "Health", href: "/health" },
 	{ name: "Fitness", href: "/fitness" },
 	{ name: "Mentality", href: "/mentality" },
 	{ name: "Tech", href: "/tech" },
@@ -16,7 +16,7 @@ const Navbar = () => {
 
 	return (
 		<header className="w-full bg-dark text-light shadow-md">
-			<nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center font-orbitron uppercase tracking-wider">
+			<nav className="container py-4 flex justify-between items-center font-orbitron uppercase tracking-wider">
 				{/* Logo */}
 				<Link to="/" className="flex items-center gap-3">
 					<div className="bg-primary p-2 rounded-md w-12 h-12 flex items-center">
@@ -41,11 +41,11 @@ const Navbar = () => {
 
 				{/* Auth Buttons */}
 				<div className="hidden md:flex gap-4 items-center text-sm font-semibold">
-					<Link to="/signup" className="hover:text-secondary">
+					<Link to="/sign-up" className="hover:text-secondary">
 						Sign Up
 					</Link>
 					<Link
-						to="/login"
+						to="/sign-in"
 						className="px-4 py-2 bg-primary text-dark rounded hover:bg-secondary transition"
 					>
 						Login
