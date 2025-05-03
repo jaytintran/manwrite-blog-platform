@@ -5,14 +5,16 @@ export default {
 		extend: {
 			fontFamily: {
 				orbitron: ["Orbitron", "sans-serif"],
+				monserat: ["Montserrat", "sans-serif"],
 			},
 			colors: {
-				primary: "#780000",
-				secondary: "#c1121f",
+				dark: "#101313",
+				primary: "#fdf0d5",
+				secondary: "#9ada23",
 				tertiary: "#003049",
 
-				textPrimary: "#fdf0d5",
-				textSecondary: "#669bbc",
+				light1: "#fdf0d5",
+				light2: "#669bbc",
 			},
 		},
 	},
