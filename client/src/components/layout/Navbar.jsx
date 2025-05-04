@@ -3,6 +3,12 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react for clean icons
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "../common/Image.jsx";
+import {
+	SignedIn,
+	SignedOut,
+	SignInButton,
+	UserButton,
+} from "@clerk/clerk-react";
 
 const navLinks = [
 	{ name: "Top Posts", href: "/posts" },
@@ -45,12 +51,18 @@ const Navbar = () => {
 					<Link to="/sign-up" className="hover:text-secondary">
 						Sign Up
 					</Link>
-					<Link
-						to="/sign-in"
-						className="px-4 py-2 bg-primary text-dark rounded hover:bg-secondary transition"
-					>
-						Login
-					</Link>
+					<SignedOut>
+						<Link
+							to="/sign-in"
+							className="px-4 py-2 bg-primary text-dark rounded hover:bg-secondary transition"
+						>
+							Sign In
+						</Link>
+						{/* <SignInButton /> */}
+					</SignedOut>
+					<SignedIn>
+						<UserButton />
+					</SignedIn>
 				</div>
 
 				{/* Mobile Toggle */}

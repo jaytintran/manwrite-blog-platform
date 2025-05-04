@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Section from "../components/layout/Section";
+import { SignIn } from "@clerk/clerk-react";
 
-const Signup = () => {
-	const [formData, setFormData] = useState({
-		username: "",
-		email: "",
-		password: "",
-	});
+const SignInPage = () => {
+	const [formData, setFormData] = useState({ email: "", password: "" });
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,23 +17,13 @@ const Signup = () => {
 	};
 
 	return (
-		<section className="py-24 flex items-center justify-center bg-dark text-light px-4">
+		<Section className="flex items-center justify-center bg-dark text-light px-4">
 			<div className="max-w-md w-full bg-light1 text-dark p-8 rounded-xl shadow-lg">
 				<h2 className="text-2xl font-bold text-center uppercase tracking-widest mb-6 font-orbitron">
-					Create Your Account
+					Welcome Back
 				</h2>
 
-				<form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-					<input
-						type="text"
-						name="username"
-						placeholder="Username"
-						value={formData.username}
-						onChange={handleChange}
-						required
-						className="px-4 py-2 rounded bg-white border border-dark/20 focus:outline-none focus:ring-2 focus:ring-secondary"
-					/>
-
+				{/* <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
 					<input
 						type="email"
 						name="email"
@@ -60,22 +48,24 @@ const Signup = () => {
 						type="submit"
 						className="bg-dark text-primary py-2 rounded font-semibold hover:bg-secondary hover:text-dark transition"
 					>
-						Sign Up
+						Log In
 					</button>
 				</form>
 
 				<p className="mt-4 text-center text-sm">
-					Already have an account?{" "}
+					New here?{" "}
 					<Link
-						to="/sign-in"
+						to="/sign-up"
 						className="text-secondary font-bold hover:underline"
 					>
-						Log in
+						Create account
 					</Link>
-				</p>
+				</p> */}
+
+				<SignIn signUpUrl="/sign-up" />
 			</div>
-		</section>
+		</Section>
 	);
 };
 
-export default Signup;
+export default SignInPage;
