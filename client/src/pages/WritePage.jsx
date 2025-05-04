@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Section from "../components/layout/Section";
+import { useUser } from "@clerk/clerk-react";
 
 const WritePage = () => {
 	const navigate = useNavigate();
-	const [isAuthenticated, setIsAuthenticated] = useState(true);
-	const [isLoading, setIsLoading] = useState(false);
+	const { isLoaded, isSignedIn, user } = useUser();
+	const [isLoading, setIsLoading] = useState(true);
 	const [formData, setFormData] = useState({
 		title: "",
 		category: "Mentality",
@@ -13,28 +14,16 @@ const WritePage = () => {
 		image: null,
 	});
 
-	// useEffect(() => {
-	// 	// Check if user is authenticated
-	// 	// Replace with your actual auth check logic
-	// 	const checkAuth = async () => {
-	// 		try {
-	// 			// Mock authentication check - replace with real API call
-	// 			const isLoggedIn = localStorage.getItem("user") !== null;
-	// 			setIsAuthenticated(isLoggedIn);
-
-	// 			if (!isLoggedIn) {
-	// 				// Redirect to sign-up if not authenticated
-	// 				navigate("/sign-up");
-	// 			}
-	// 		} catch (error) {
-	// 			console.error("Auth check failed:", error);
-	// 		} finally {
-	// 			setIsLoading(true);
-	// 		}
-	// 	};
-
-	// 	checkAuth();
-	// }, [navigate]);
+	useEffect(() => {
+		// Check if user is authenticated using Clerk
+		if (isLoaded) {
+			if (!isSignedIn) {
+				// Redirect to sign-in if not authenticated
+				navigate("/sign-in");
+			}
+			setIsLoading(false);
+		}
+	}, [isLoaded, isSignedIn, navigate]);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
