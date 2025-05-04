@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react for clean icons
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "../common/Image.jsx";
 
 const navLinks = [
 	{ name: "Top Posts", href: "/posts" },
@@ -20,9 +21,9 @@ const Navbar = () => {
 				{/* Logo */}
 				<Link to="/" className="flex items-center gap-3">
 					<div className="bg-primary p-2 rounded-md w-12 h-12 flex items-center">
-						<img src="/logo.svg" alt="Logo" className="w-8" />
+						<Image src="/logo.svg" className="w-8" alt="Manwrite Logo" />
 					</div>
-					<h1 className="text-xl font-bold">Manwrite</h1>
+					<span className="text-xl font-bold">Manwrite</span>
 				</Link>
 
 				{/* Desktop Nav */}

@@ -1,4 +1,4 @@
-import { featuredPosts } from "../constants/dummyData";
+import { featuredPosts } from "../../constants/dummyData";
 
 const FeaturedPosts = () => {
 	return (
