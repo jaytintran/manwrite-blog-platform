@@ -1,30 +1,30 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+// import { Link } from "react-router-dom";
+// import { useState } from "react";
 import { SignUp } from "@clerk/clerk-react";
 import Section from "../components/layout/Section";
 
 const SignUpPage = () => {
-	const [formData, setFormData] = useState({
-		username: "",
-		email: "",
-		password: "",
-	});
+	// const [formData, setFormData] = useState({
+	// 	username: "",
+	// 	email: "",
+	// 	password: "",
+	// });
 
-	const handleChange = (e) => {
-		setFormData({ ...formData, [e.target.name]: e.target.value });
-	};
+	// const handleChange = (e) => {
+	// 	setFormData({ ...formData, [e.target.name]: e.target.value });
+	// };
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		// TODO: Hook up to backend
-		console.log(formData);
-	};
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault();
+	// 	// TODO: Hook up to backend
+	// 	console.log(formData);
+	// };
 
 	return (
 		<Section className="flex items-center justify-center bg-dark text-light px-4 ">
 			<div className="max-w-md w-full bg-light1 text-dark p-8 rounded-xl shadow-lg flex justify-center flex-col items-center">
 				<h2 className="text-2xl font-bold text-center uppercase tracking-widest mb-6 font-orbitron">
-					Let's Dive In
+					Let&apos;s Dive In!
 				</h2>
 
 				{/* <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

@@ -3,6 +3,8 @@ import Hero from "../components/layout/Hero";
 import { useState } from "react";
 import SearchBar from "../components/common/SearchBar";
 import CategoriesBreadcrumbs from "../components/common/CategoriesBreadcrumbs";
+import BlogList from "../components/layout/BlogList";
+import Section from "../components/layout/Section";
 
 const Home = () => {
 	const [search, setSearch] = useState("");
@@ -18,6 +20,11 @@ const Home = () => {
 				{/* Optional: Add a filter button for mobile */}
 				<CategoriesBreadcrumbs selected={category} onSelect={setCategory} />
 			</div>
+
+			{/* Sample Blog Lists */}
+			<Section>
+				<BlogList category={category} searchQuery={search} />
+			</Section>
 
 			{/* Featured Posts */}
 			<FeaturedPosts />

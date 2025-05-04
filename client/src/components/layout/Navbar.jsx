@@ -3,12 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react"; // install lucide-react for clean icons
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "../common/Image.jsx";
-import {
-	SignedIn,
-	SignedOut,
-	SignInButton,
-	UserButton,
-} from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const navLinks = [
 	{ name: "Top Posts", href: "/posts" },

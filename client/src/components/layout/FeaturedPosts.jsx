@@ -4,10 +4,8 @@ import Section from "./Section";
 const FeaturedPosts = () => {
 	return (
 		<Section>
+			<h2 className="heading w-fit">Featured Chronicles</h2>
 			<div>
-				<h2 className="text-3xl font-bold mb-10 uppercase border-b border-light/20 pb-2">
-					Featured Chronicles
-				</h2>
 				<div className="grid md:grid-cols-3 gap-6">
 					{/* Sample Card */}
 					{featuredPosts.map((post) => (
