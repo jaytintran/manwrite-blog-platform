@@ -17,7 +17,7 @@ const FeaturedPosts = () => {
 							<h3 className="text-xl font-bold mb-2">{post.title}</h3>
 							<p className="text-light/70 mb-3 text-sm">{post.description}</p>
 							<a
-								href="/post/1"
+								href="/posts/1"
 								className="text-primary hover:underline text-sm font-semibold"
 							>
 								Read More →

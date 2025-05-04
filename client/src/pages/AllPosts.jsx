@@ -66,7 +66,7 @@ const AllPosts = () => {
 				<div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{posts.map((post) => (
 						<Link
-							to={`/blogs/${post.id}`}
+							to={`/posts/${post.id}`}
 							key={post.id}
 							className="bg-light1 text-dark p-4 rounded-lg hover:shadow-xl transition-all duration-300"
 						>
