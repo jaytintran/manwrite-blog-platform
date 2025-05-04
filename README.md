@@ -1,13 +1,13 @@
 # 📝 Manwrite – Full-Stack Blog Application
 
-Manwrite is a modern, fully functional full-stack blog application built from the ground up. This project covers everything from setting up the frontend to integrating a robust backend with database storage, offering a complete end-to-end experience for developers looking to build and scale dynamic web applications. Besides being a full stack project, this project is also my where I capture my thoughts and ideas about my side hobbies and life in general.
+Manwrite is a modern, fully functional full-stack blog application built from the ground up. This project covers everything from setting up the frontend to integrating a robust backend with database storage, offering a complete end-to-end experience for developers looking to build and scale dynamic web applications. Besides being a full stack project, this project is also where I capture my thoughts and ideas about my side hobbies and life in general.
 
 ## 🚀 Features
 
 - **User Authentication** – Secure registration and login system using Express.
 - **User Profiles** – Users can update personal details or delete their accounts.
 - **Rich Text Editing** – Dynamic Markdown support for creating blog posts with automatic syntax highlighting.
-- **Seamless Media Storage** – Upload and manage images effortlessly with Cloudinary.
+- **Seamless Media Storage** – Upload and manage images effortlessly with ImageKit.
 - **User Engagement** – Like and interact with blog posts in real time.
 - **Personal Dashboard** – A dedicated space with user stats and blog management tools.
 - **Responsive UI** – Fully optimized for all devices with light/dark mode support.
@@ -18,27 +18,25 @@ Manwrite is a modern, fully functional full-stack blog application built from th
 ### Additional Capabilities
 
 - 🏗️ Full CRUD (Create, Read, Update, Delete) functionality for blog posts.
-- 🖼️ Image upload support via Cloudinary integration.
-- 📄 Dynamic content rendering with EJS for enhanced user experience.
-- 🔐 Secure authentication and session management (optional extension).
+- 🖼️ Image upload support via ImageKit integration.
+- 🔐 Secure authentication and session management.
 - 🔥 Built using a modern full-stack development approach.
 
 ## 🛠 Tech Stack
 
 ### **Frontend**
 
-- **React.js** – Component-based UI development.
+- **React 19** – Component-based UI development with the latest React version.
 - **Tailwind CSS** – Utility-first styling for rapid design.
-- **Hero UI** – Prebuilt UI components for a polished interface.
-- **JavaScript (ES6+)** – Enhancing interactivity and functionality.
-- **HTML & CSS** – Structuring and styling the application.
+- **Framer Motion** – Smooth animations and transitions.
+- **React Router v7** – Advanced routing capabilities.
+- **Vite** – Next-generation frontend tooling for faster development.
 
 ### **Backend**
 
 - **Node.js** – High-performance server-side JavaScript runtime.
 - **Express.js** – Lightweight framework for building APIs and handling requests.
 - **MongoDB** – NoSQL database for scalable data storage.
-- **EJS** – Templating engine for rendering dynamic content.
 
 ### **Cloud Services**
 
@@ -49,47 +47,55 @@ Manwrite is a modern, fully functional full-stack blog application built from th
 ### 1️⃣ Clone the repository
 
 ```sh
-git clone https://github.com/yourusername/blog-app.git
-cd blog-app
+git clone https://github.com/yourusername/manwrite.git
+cd manwrite
 ```
 
 ### 2️⃣ Install dependencies
 
 ```sh
+# Install frontend dependencies
+cd client
+npm install
+
+# Install backend dependencies
+cd ../server
 npm install
 ```
 
 ### 3️⃣ Configure environment variables
 
-Create a `.env` file in the root directory and add the following variables:
+Create a `.env` file in the client directory and add the following variables:
+
+```ini
+VITE_IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
+VITE_IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
+```
+
+Create a `.env` file in the server directory and add:
 
 ```ini
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+JWT_SECRET=your_jwt_secret
 ```
 
-### 4️⃣ Start the development server
+### 4️⃣ Start the development servers
 
 ```sh
-npm start
+# Start frontend (from client directory)
+npm run dev
+
+# Start backend (from server directory)
+npm run dev
 ```
 
-The application will be available at **http://localhost:5000**.
-
-## 📁 Resources
-
-- **Node.js** – Server-side JavaScript runtime.
-- **Express.js** – Fast backend framework.
-- **MongoDB** – Flexible NoSQL database.
-- **EJS** – Template engine for dynamic content.
-- **Cloudinary** – Cloud-based media storage.
+The frontend will be available at **http://localhost:5173** and the backend at **http://localhost:5000**.
 
 ## 🎯 Key Takeaways from This Project
 
 ✅ **Mastering full-stack application architecture** – Understanding the synergy between frontend and backend.  
-✅ **Seamless integration of technologies** – Connecting UI, API, and database for a smooth workflow.  
-✅ **Database and cloud storage handling** – Managing data efficiently with MongoDB and Cloudinary.  
+✅ **Modern React development** – Working with React 19 and the latest ecosystem tools.  
+✅ **Responsive design with Tailwind** – Creating adaptive layouts with utility-first CSS.  
+✅ **Cloud integration** – Managing media assets with ImageKit.  
 ✅ **Building real-world CRUD applications** – Implementing core web app functionalities with modern tools.
