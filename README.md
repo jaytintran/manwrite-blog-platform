@@ -1,5 +1,7 @@
 # 📝 Manwrite – Full-Stack Blog Application
 
+![image](https://github.com/user-attachments/assets/efb7c144-0b54-4518-af8d-126c26fe9a22)
+
 Manwrite is a modern, fully functional full-stack blog application built from the ground up. This project covers everything from setting up the frontend to integrating a robust backend with database storage, offering a complete end-to-end experience for developers looking to build and scale dynamic web applications. Besides being a full stack project, this project is also where I capture my thoughts and ideas about my side hobbies and life in general.
 
 ## 🚀 Features
