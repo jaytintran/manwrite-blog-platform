@@ -1,5 +1,5 @@
 import { featuredPosts } from "../../constants/dummyData";
-import Section from "./Section";
+import Section from "../../components/layout/Section";
 
 const FeaturedPosts = () => {
 	return (

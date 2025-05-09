@@ -43,9 +43,9 @@ const Navbar = () => {
 
 				{/* Auth Buttons */}
 				<div className="hidden md:flex gap-4 items-center text-sm font-semibold">
-					<Link to="/sign-up" className="hover:text-secondary">
+					{/* <Link to="/sign-up" className="hover:text-secondary">
 						Sign Up
-					</Link>
+					</Link> */}
 					<SignedOut>
 						<Link
 							to="/sign-in"
@@ -91,20 +91,19 @@ const Navbar = () => {
 								</li>
 							))}
 							<hr className="border-light/20 my-2" />
-							<Link
-								to="/signup"
-								className="block py-2 hover:text-secondary"
-								onClick={() => setIsOpen(false)}
-							>
-								Sign Up
-							</Link>
-							<Link
-								to="/login"
-								className="block py-2 hover:text-secondary"
-								onClick={() => setIsOpen(false)}
-							>
-								Login
-							</Link>
+							<SignedOut>
+								<Link
+									to="/sign-in"
+									onClick={() => setIsOpen(false)}
+									className="px-4 py-2 bg-primary text-dark rounded hover:bg-secondary transition"
+								>
+									Sign In
+								</Link>
+								{/* <SignInButton /> */}
+							</SignedOut>
+							<SignedIn>
+								<UserButton />
+							</SignedIn>
 						</ul>
 					</motion.div>
 				)}

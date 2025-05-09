@@ -31,7 +31,7 @@ const Hero = () => {
 					men.
 				</p>
 				<Link
-					to="/posts"
+					to="/sign-in"
 					className="inline-block bg-primary text-dark px-6 py-3 text-lg font-semibold uppercase tracking-widest rounded hover:bg-secondary transition"
 				>
 					Join the Movement

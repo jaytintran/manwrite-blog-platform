@@ -21,8 +21,8 @@ const SignUpPage = () => {
 	// };
 
 	return (
-		<Section className="flex items-center justify-center bg-dark text-light px-4 ">
-			<div className="max-w-md w-full bg-light1 text-dark p-8 rounded-xl shadow-lg flex justify-center flex-col items-center">
+		<Section className="flex items-center justify-center bg-transparent px-4 ">
+			<div className="max-w-md w-full z-10 bg-light1/10 text-primary p-8 rounded-xl shadow-lg flex justify-center flex-col items-center">
 				<h2 className="text-2xl font-bold text-center uppercase tracking-widest mb-6 font-orbitron">
 					Let&apos;s Dive In!
 				</h2>
