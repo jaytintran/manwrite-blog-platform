@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react-refresh/only-export-components */
 const CTA = () => {
 	return (
 		<section className="py-20 bg-sand text-primary text-center">

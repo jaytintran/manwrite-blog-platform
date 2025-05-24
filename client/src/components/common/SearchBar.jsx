@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 const SearchBar = ({ value, onChange }) => {
 	return (
 		<motion.div
-			className="w-1/2 md:w-[30%] relative"
+			className="w-full md:w-1/3 lg:w-1/4 relative"
 			initial={{ opacity: 0, y: -10 }}
 			animate={{
 				opacity: 1,

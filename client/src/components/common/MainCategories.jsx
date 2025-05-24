@@ -10,7 +10,7 @@ const categories = [
 	"Combat",
 ];
 
-const CategoriesBreadcrumbs = ({ selected, onSelect }) => {
+const MainCategories = ({ selected, onSelect }) => {
 	return (
 		<div className="flex gap-3 flex-wrap">
 			{categories.map((cat, idx) => (
@@ -56,4 +56,4 @@ const CategoriesBreadcrumbs = ({ selected, onSelect }) => {
 	);
 };
 
-export default CategoriesBreadcrumbs;
+export default MainCategories;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "../components/common/Image.jsx";
 import SearchBar from "../components/common/SearchBar.jsx";
-import CategoriesBreadcrumbs from "../components/common/CategoriesBreadcrumbs.jsx";
+import MainCategories from "../components/common/MainCategories.jsx";
 import Section from "../components/layout/Section.jsx";
 
 const AllPosts = () => {
@@ -54,7 +54,7 @@ const AllPosts = () => {
 					<h2 className="text-3xl font-bold uppercase tracking-widest font-orbitron">
 						All Posts
 					</h2>
-					<CategoriesBreadcrumbs selected={category} onSelect={setCategory} />
+					<MainCategories selected={category} onSelect={setCategory} />
 				</div>
 
 				<SearchBar value={search} onChange={(e) => setSearch(e.target.value)} />

@@ -6,11 +6,11 @@ import Image from "../common/Image.jsx";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const navLinks = [
-	{ name: "Top Posts", href: "/posts" },
-	{ name: "Health", href: "/health" },
+	{ name: "All Posts", href: "/posts" },
 	{ name: "Fitness", href: "/fitness" },
 	{ name: "Mentality", href: "/mentality" },
 	{ name: "Tech", href: "/tech" },
+	{ name: "Courses", href: "/courses" },
 ];
 
 const Navbar = () => {
