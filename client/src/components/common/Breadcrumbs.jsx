@@ -28,7 +28,7 @@ const Breadcrumbs = () => {
 				transition={{ duration: 0.3 }}
 			>
 				<Link
-					to="/"
+					to="/posts"
 					className="flex items-center hover:text-secondary transition-colors"
 				>
 					<Home size={16} className="mr-1" />

@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 // import { useState } from "react";
 import { SignUp } from "@clerk/clerk-react";
-import Section from "../components/layout/Section";
+import Section from "../layout/Section";
 
 const SignUpPage = () => {
 	// const [formData, setFormData] = useState({

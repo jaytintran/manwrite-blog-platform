@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Section from "../components/layout/Section";
+import Section from "../layout/Section";
 import { SignIn } from "@clerk/clerk-react";
 
 const SignInPage = () => {
@@ -18,7 +18,7 @@ const SignInPage = () => {
 
 	return (
 		<>
-			<Section className="min-h-screen flex items-center justify-center bg-transparent relative overflow-hidden">
+			<Section className="min-h-screen flex items-center justify-center bg-transparent relative overflow-hidden !bg-dark w-[100vw]">
 				{/* Content */}
 				<div className="relative z-10 max-w-md w-full bg-light1/10 backdrop-blur-md text-light p-8 rounded-xl shadow-2xl border border-light1/20">
 					<h2 className="text-2xl font-bold text-center uppercase tracking-widest mb-6 font-orbitron">

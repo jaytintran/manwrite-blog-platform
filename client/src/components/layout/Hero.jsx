@@ -7,7 +7,7 @@ const Hero = () => {
 	const words = headingText.split(" ");
 
 	return (
-		<section className="py-24">
+		<section className="py-24 h-[70vh] flex items-center justify-center">
 			<div className="text-center">
 				<h1 className="text-4xl md:text-6xl font-orbitron font-extrabold uppercase tracking-wide mb-4 flex justify-center flex-wrap gap-x-4">
 					{words.map((word, index) => (

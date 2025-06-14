@@ -1,40 +1,49 @@
-import { useLocation } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
-import Navbar from "./Navbar.jsx";
-import App from "../../App.jsx";
-import LandingPage from "../../pages/LandingPage.jsx";
-import About from "../../pages/About.jsx";
-import Contact from "../../pages/Contact.jsx";
-import SignInPage from "../../pages/SignInPage.jsx";
-import SignUpPage from "../../pages/SignUpPage.jsx";
-import AllPosts from "../../pages/AllPosts.jsx";
-import PostPage from "../../pages/PostPage.jsx";
-import WritePage from "../../pages/WritePage.jsx";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { SignedIn, SignedOut, useAuth } from "@clerk/clerk-react";
+import Navbar from "./Navbar";
+import LandingPage from "../pages/LandingPage.jsx";
+import About from "../pages/About.jsx";
+import Contact from "../pages/Contact.jsx";
+import SignInPage from "../pages/SignInPage.jsx";
+import SignUpPage from "../pages/SignUpPage.jsx";
+import Home from "../pages/Home.jsx";
+import PostPage from "../pages/PostPage.jsx";
+import WritePage from "../pages/WritePage.jsx";
+import CategoryPage from "../pages/CategoryPage.jsx";
+
+// Protected route component
+const ProtectedRoute = ({ children }) => {
+	const { isSignedIn, isLoaded } = useAuth();
+
+	if (!isLoaded) {
+		// Show loading state while Clerk loads
+		return (
+			<div className="flex justify-center items-center h-screen bg-dark text-secondary">
+				Loading...
+			</div>
+		);
+	}
+
+	if (!isSignedIn) {
+		// Redirect to sign-in if not authenticated
+		return <Navigate to="/sign-in" replace />;
+	}
+
+	return children;
+};
 
 const Layout = () => {
-	const location = useLocation();
-	const hideNavbarPaths = ["/sign-in", "/sign-up"];
-	const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
-
 	return (
 		<>
-			{shouldHideNavbar ? "" : <Navbar />}
-			{shouldHideNavbar && (
-				<div className="absolute inset-0 z-0 !w-[100vw]">
-					<div className="absolute inset-0 bg-gradient-to-br from-dark via-tertiary to-dark opacity-80"></div>
-					<div className="absolute inset-0 bg-[url('/auth-pattern.svg')] bg-repeat opacity-10"></div>
-					<div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-dark to-transparent"></div>
-					<div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-dark to-transparent"></div>
-				</div>
-			)}
+			<Navbar />
 			<Routes>
+				{/* Home route with conditional rendering based on auth state */}
 				<Route
 					path="/"
 					element={
 						<>
 							<SignedIn>
-								<App />
+								<Home />
 							</SignedIn>
 							<SignedOut>
 								<LandingPage />
@@ -43,14 +52,26 @@ const Layout = () => {
 					}
 				/>
 
+				{/* Public routes */}
 				<Route path="/about" element={<About />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/sign-in" element={<SignInPage />} />
 				<Route path="/sign-up" element={<SignUpPage />} />
-				<Route path="/posts" element={<AllPosts />} />
+
+				{/* Protected routes */}
+				<Route path="/posts" element={<Home />} />
 				<Route path="/posts/:id" element={<PostPage />} />
-				<Route path="/:slug" element={<PostPage />} />
-				<Route path="/write" element={<WritePage />} />
+				<Route
+					path="/write"
+					element={
+						<ProtectedRoute>
+							<WritePage />
+						</ProtectedRoute>
+					}
+				/>
+
+				{/* Category route */}
+				<Route path="/:category" element={<CategoryPage />} />
 			</Routes>
 		</>
 	);

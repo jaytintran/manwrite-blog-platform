@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Section from "../components/layout/Section";
+import Section from "../layout/Section.jsx";
 import { useUser } from "@clerk/clerk-react";
 
 const WritePage = () => {

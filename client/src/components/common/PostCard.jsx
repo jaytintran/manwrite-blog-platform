@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Clock, ThumbsUp, BookOpen } from "lucide-react";
-import Image from "../common/Image";
+import Image from "./Image";
 import { motion } from "framer-motion";
 
 const PostCard = ({ post }) => {
@@ -15,9 +15,12 @@ const PostCard = ({ post }) => {
 			<div className="md:w-2/3 flex flex-col justify-between">
 				<div>
 					<div className="flex items-center gap-2 text-sm text-light1/70 mb-2">
-						<span className="text-secondary font-semibold">
+						<Link
+							to={`/${post.category}`}
+							className="text-secondary font-semibold hover:underline"
+						>
 							#{post.category}
-						</span>
+						</Link>
 						<span>•</span>
 						<span>{post.date}</span>
 					</div>
@@ -40,8 +43,11 @@ const PostCard = ({ post }) => {
 							<ThumbsUp size={16} />
 							<span>{post.likes}</span>
 						</div>
-						<div className="flex items-center gap-1">
-							<Link to={`/posts/${post.id}`}>
+						<div>
+							<Link
+								to={`/posts/${post.id}`}
+								className="flex items-center gap-1"
+							>
 								<BookOpen size={16} />
 								<span>Read More</span>
 							</Link>
@@ -50,12 +56,12 @@ const PostCard = ({ post }) => {
 					<span className="text-sm text-light1/70">By {post.author}</span>
 				</div>
 			</div>
-			<div className="md:w-1/3 xl:block md:hidden max-sm:hidden">
+			<div className="md:w-1/3">
 				<Link to={`/posts/${post.id}`}>
 					<Image
 						src={post.image}
 						alt={post.title}
-						className="w-full h-48 object-cover rounded-lg hover:opacity-90 transition-opacity"
+						className="w-full h-40 object-cover rounded-lg"
 					/>
 				</Link>
 			</div>

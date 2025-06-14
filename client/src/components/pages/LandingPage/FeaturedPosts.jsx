@@ -1,5 +1,5 @@
-import { featuredPosts } from "../../constants/dummyData";
-import Section from "../../components/layout/Section";
+import { featuredPosts } from "../../../constants/dummyData.js";
+import Section from "../../layout/Section";
 
 const FeaturedPosts = () => {
 	return (

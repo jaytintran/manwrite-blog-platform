@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Image from "../components/common/Image.jsx";
-import SearchBar from "../components/common/SearchBar.jsx";
-import MainCategories from "../components/common/MainCategories.jsx";
-import Section from "../components/layout/Section.jsx";
+import Image from "../common/Image.jsx";
+import SearchBar from "../common/SearchBar.jsx";
+import MainCategories from "../common/MainCategories.jsx";
+import Section from "../layout/Section.jsx";
 
 const AllPosts = () => {
 	const [posts, setPosts] = useState([]);
